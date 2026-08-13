@@ -16,6 +16,6 @@ jobs:
       - name: Push to GitLab VPS
         run: |
           # Perbaikan: Hapus tanda '#' dan tambahkan '.git' di akhir
-          GITLAB_URL="192.168.133.81/Reval/github-khuanzah.git"
+          GITLAB_URL="gitlab.kazulab.my.id/Reval/github-khuanzah#"
           
-          git push --prune "http://gitlab-ci-token:${{ secrets.GITLAB_TOKEN }}@${GITLAB_URL}" refs/heads/*:refs/heads/* refs/tags/*:refs/tags/*
+          git push --prune "https://gitlab-ci-token:${{ secrets.GITLAB_TOKEN }}@${GITLAB_URL}" refs/heads/*:refs/heads/* refs/tags/*:refs/tags/*
