@@ -15,5 +15,7 @@ jobs:
 
       - name: Push to GitLab VPS
         run: |
-          GITLAB_URL="gitlab.kazulab.my.id/Reval/otomatisasi-github-to-gitlab1"
+          # JANGAN pakai https:// di depan variabel ini
+          GITLAB_URL="gitlab.kazulab.my.id/Reval/otomatisasi-github-to-gitlab1.git"
+          
           git push --prune "https://gitlab-ci-token:${{ secrets.GITLAB_TOKEN }}@${GITLAB_URL}" refs/heads/*:refs/heads/* refs/tags/*:refs/tags/*
