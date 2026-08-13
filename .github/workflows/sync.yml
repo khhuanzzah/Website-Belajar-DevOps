@@ -1,0 +1,19 @@
+name: Sync to GitLab VPS
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to GitLab VPS
+        run: |
+          GITLAB_URL="https://gitlab.kazulab.my.id/Reval/otomatisasi-github-to-gitlab1"
+          git push --prune "https://gitlab-ci-token:${{ secrets.GITLAB_TOKEN }}@${GITLAB_URL}" refs/heads/*:refs/heads/* refs/tags/*:refs/tags/*
