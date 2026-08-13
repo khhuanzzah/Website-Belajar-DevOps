@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Barang - Stock App</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+</head>
+<body>
+    <div class="input-form-container">
+        <header>
+            <nav class="main-nav">
+                <h1>Stock App</h1>
+                <ul>
+                    <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a href="#" class="active">Daftar Barang</a></li>
+                    <li><a href="{{ url_for('add_transaksi') }}">Transaksi</a></li>
+                    <li><a href="{{ url_for('laporan') }}">Laporan</a></li>
+                    <li><a href="{{ url_for('validasi_form') }}">Validasi Formulir</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="form-content">
+            <h2>Tambah Barang Baru</h2>
+            <form class="data-form">
+                <div class="input-group">
+                    <label for="nama-barang">Nama Barang</label>
+                    <input type="text" id="nama-barang" name="nama-barang" required>
+                </div>
+                <div class="input-group">
+                    <label for="kode-barang">Kode Barang</label>
+                    <input type="text" id="kode-barang" name="kode-barang">
+                </div>
+                <div class="input-group">
+                    <label for="stok-awal">Stok Awal</label>
+                    <input type="number" id="stok-awal" name="stok-awal" required>
+                </div>
+                <div class="input-group">
+                    <label for="kategori">Kategori</label>
+                    <input type="text" id="kategori" name="kategori">
+                </div>
+                <button type="submit">Simpan Barang</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

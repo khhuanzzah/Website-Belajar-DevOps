@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan - StockFlow App</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <nav class="main-nav">
+                <h1>StockFlow App</h1>
+                <ul>
+                    <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('add_item') }}">Daftar Barang</a></li>
+                    <li><a href="{{ url_for('add_transaksi') }}">Transaksi</a></li>
+                    <li><a href="#" class="active">Laporan</a></li>
+                    <li><a href="{{ url_for('validasi_form') }}">Validasi Formulir</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="data-form">
+                <h2>Opsi Laporan</h2>
+                <form class="report-options">
+                    <div class="input-group">
+                        <label for="report-type">Jenis Laporan</label>
+                        <select id="report-type" name="report-type">
+                            <option value="stok">Laporan Stok</option>
+                            <option value="transaksi-harian">Transaksi Harian</option>
+                            <option value="transaksi-bulanan">Transaksi Bulanan</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="date-range-start">Rentang Tanggal (Mulai)</label>
+                        <input type="date" id="date-range-start" name="date-range-start">
+                    </div>
+                    <div class="input-group">
+                        <label for="date-range-end">Rentang Tanggal (Akhir)</label>
+                        <input type="date" id="date-range-end" name="date-range-end">
+                    </div>
+                    <button type="submit">Buat Laporan</button>
+                </form>
+            </div>
+            
+            <div class="recent-transactions" style="margin-top: 20px;">
+                <h2>Detail Laporan</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tanggal Laporan</th>
+                            <th>Judul Laporan</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>30/08/2025</td>
+                            <td>Laporan Stok Akhir Bulan Agustus</td>
+                            <td>Selesai</td>
+                            <td><a href="#">Unduh</a> | <a href="#">Lihat</a></td>
+                        </tr>
+                        <tr>
+                            <td>25/08/2025</td>
+                            <td>Laporan Transaksi Harian</td>
+                            <td>Selesai</td>
+                            <td><a href="#">Unduh</a> | <a href="#">Lihat</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

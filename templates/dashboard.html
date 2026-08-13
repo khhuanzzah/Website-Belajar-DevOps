@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Stock App</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <nav class="main-nav">
+                <h1>Stock App</h1>
+                <ul>
+                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li><a href="{{ url_for('add_item') }}">Daftar Barang</a></li>
+                    <li><a href="{{ url_for('add_transaksi') }}">Transaksi</a></li>
+                    <li><a href="{{ url_for('laporan') }}">Laporan</a></li>
+                    <li><a href="{{ url_for('validasi_form') }}">Validasi Formulir</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="stats-cards">
+                <div class="card">
+                    <h3>Total Stok Saat Ini</h3>
+                    <p class="stat-number">1500</p>
+                </div>
+                <div class="card low-stock-card">
+                    <h3>Barang Stok Rendah</h3>
+                    <p class="stat-number">7</p>
+                </div>
+            </div>
+
+            <div class="recent-transactions">
+                <h2>Transaksi Terbaru</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Nama Barang</th>
+                            <th>Jenis</th>
+                            <th>Jumlah</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>25/08/2025</td>
+                            <td>Pulpen</td>
+                            <td>Masuk</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>25/08/2025</td>
+                            <td>Buku</td>
+                            <td>Keluar</td>
+                            <td>50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+</body>
+</html>

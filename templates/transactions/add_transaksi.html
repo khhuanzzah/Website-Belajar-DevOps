@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - StockFlow App</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <nav class="main-nav">
+                <h1>StockFlow App</h1>
+                <ul>
+                    <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('add_item') }}">Daftar Barang</a></li>
+                    <li><a href="#" class="active">Transaksi</a></li>
+                    <li><a href="{{ url_for('laporan') }}">Laporan</a></li>
+                    <li><a href="{{ url_for('validasi_form') }}">Validasi Formulir</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="recent-transactions">
+                <h2>Catatan Transaksi Barang</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Nama Barang</th>
+                            <th>Jenis Transaksi</th>
+                            <th>Jumlah</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>-</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="data-form">
+                <h2>Tambah Transaksi Baru</h2>
+                <form class="transaction-form">
+                    <div class="input-group">
+                        <label for="transaction-item">Nama Barang</label>
+                        <input type="text" id="transaction-item" name="item" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="transaction-type">Jenis Transaksi</label>
+                        <select id="transaction-type" name="type" required>
+                            <option value="in">Barang Masuk</option>
+                            <option value="out">Barang Keluar</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="transaction-amount">Jumlah</label>
+                        <input type="number" id="transaction-amount" name="amount" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="transaction-notes">Keterangan</label>
+                        <textarea id="transaction-notes" name="notes"></textarea>
+                    </div>
+                    <button type="submit">Simpan Transaksi</button>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
